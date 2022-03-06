@@ -118,3 +118,24 @@
   0% { opacity: 1; }
   100% { opacity: 0; }
 }
+
+
+
+
+/*############### MY CODE #############*/
+.help-block {
+  color: red;
+  text-transform: capitalize;
+  position: absolute;
+  top: 45px;
+ }
+
+.form-group{
+  position: relative;
+  margin-bottom: 25px;
+
+}
+
+
+
+
