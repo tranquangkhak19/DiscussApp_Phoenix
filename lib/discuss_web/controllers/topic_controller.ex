@@ -3,12 +3,16 @@ defmodule DiscussWeb.TopicController do
   alias Discuss.Topic
   alias Discuss.Repo
 
+  def index(conn, _params) do
+    topics = Repo.all(Topic)
+    render conn, "index.html", topics: topics
+  end
+
   def new(conn, _params) do
     # struct = %Discuss.Topic{}
     # params = %{}
     # changeset = Discuss.Topic.changeset(struct, params)
     changeset = Topic.changeset(%Topic{}, %{})
-
     render conn, "new.html", changeset: changeset
   end
 
@@ -16,7 +20,6 @@ defmodule DiscussWeb.TopicController do
     #IO.inspect(params)
     #%{"topic" => topic} = params
     changeset = Topic.changeset(%Topic{}, topic)
-
     case Repo.insert(changeset) do
       {:ok, post} -> IO.inspect(post)
       {:error, changeset} ->

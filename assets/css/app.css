@@ -123,17 +123,9 @@
 
 
 /*############### MY CODE #############*/
-.help-block {
+.invalid-feedback {
   color: red;
   text-transform: capitalize;
-  position: absolute;
-  top: 45px;
- }
-
-.form-group{
-  position: relative;
-  margin-bottom: 25px;
-
 }
 
 
