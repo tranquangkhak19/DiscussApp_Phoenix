@@ -23,7 +23,7 @@ defmodule DiscussWeb.TopicController do
     case Repo.insert(changeset) do
       {:ok, _post} ->
         conn
-        |> put_flash(:info, "Topic Created")#show one time message
+        |> put_flash(:info, "Topic Created")#put the flash and get_flasth will show one time message
         |> redirect(to: Routes.topic_path(conn, :index))
       {:error, changeset} ->
         render conn, "new.html", changeset: changeset
