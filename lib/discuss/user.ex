@@ -2,8 +2,7 @@ defmodule Discuss.User do
   use Ecto.Schema
   import Ecto.Changeset
 
-  schema "user" do
-    field :username, :string #login in user
+  schema "users" do
     field :email, :string
     field :provider, :string
     field :token, :string
@@ -14,6 +13,6 @@ defmodule Discuss.User do
   def changeset(struct, params \\ %{}) do
     struct
     |> cast(params, [:email, :provider, :token])
-    |> validate_required([:eamil, :provider, :token])
+    |> validate_required([:email, :provider, :token])
   end
 end
