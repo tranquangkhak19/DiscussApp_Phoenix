@@ -60,7 +60,12 @@ config :ueberauth, Ueberauth.Strategy.Github.OAuth,
   client_id: System.get_env("OAUTH_DISCUSS_GITHUB_CLIENT_ID"),
   client_secret: System.get_env("OAUTH_DISCUSS_GITHUB_CLIENT_SECRET")
 
+# config :ueberauth, Ueberauth,
+#   providers: [
+#     github: {Ueberauth.Strategy.Github, [allow_private_emails: true]}
+#   ]
+
 config :ueberauth, Ueberauth,
   providers: [
-    github: {Ueberauth.Strategy.Github, [allow_private_emails: true]}
+    github: { Ueberauth.Strategy.Github, [default_scope: "user, user:email"] }
   ]
